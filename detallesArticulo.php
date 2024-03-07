@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -25,9 +25,9 @@
 		<?php
 
 		include('funciones/funciones_tienda.php');
-		$idProd = isset($_POST['idProd']) ? $_POST['idProd'] : $_GET['idProd'];
+		$idproducto = isset($_POST['idproducto']) ? $_POST['idproducto'] : $_GET['idproducto'];
 		include('header.php');
-		$resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
+		$resultadoDetalleProduct = detalles_producto_seleccionado($con, $idproducto);
 		?>
 
 		<div class="container single_product_container">
@@ -68,10 +68,10 @@
 										<i class="fas fa-angle-left" style="color: #666;"></i>
 									</a>
 									&nbsp;
-									<?php echo $dataProduct['nameProd']; ?>
+									<?php echo $dataProduct['nombre']; ?>
 								</h2>
 								<p>
-									<?php echo $dataProduct['description_Prod']; ?>
+									<?php echo $dataProduct['descripcion']; ?>
 								</p>
 							</div>
 
@@ -93,7 +93,7 @@
 								&nbsp;&nbsp;
 
 								<p>
-									<button class="button cart-button btn block" onclick="agregarCarrito(this, '<?php echo $dataProduct['prodId']; ?>', '<?php echo $dataProduct['precio']; ?>')">
+									<button class="button cart-button btn block" onclick="agregarCarrito(this, '<?php echo $dataProduct['idproducto']; ?>', '<?php echo $dataProduct['precio']; ?>')">
 										<span>Agregar a Carrito</span>
 										<div class="cart">
 											<svg viewBox="0 0 36 26">
